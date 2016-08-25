@@ -17,11 +17,55 @@
 
 
 <style>
-    .btn {
+
+    body {
+        background-color: #000;
+    }
+
+    .fluid-container {
+        margin-top: 12%;
+    }
+
+    #generatorbutton {
         width: 200px;
         height: 80px;
         font-size: 20px;
         text-align: center;
+        border-radius: 8px;
+        color: #fff;
+        background-color: rgba(0, 153, 51, 0.5);
+        outline: none;
+    }
+
+    #generatorbutton:focus {
+        outline: none;
+        border: 0;
+        color: #fff;
+        background-color: rgba(0, 153, 51, 0.5);
+    }
+
+    #generatorbutton:hover {
+        color: #fff;
+        background-color: rgba(0, 153, 51, 0.8);
+        transition: color .5s, background 1s;
+    }
+
+    .row {
+        text-align: center;
+    }
+
+    #messagerow {
+        margin-top: 3%;
+    }
+
+    #message {
+        color: #fff;
+    }
+
+    #footerrow {
+        bottom: 0%;
+        text-align: right;
+        color: #fff;
     }
 
 </style>
@@ -52,7 +96,24 @@ var main = function() {
         "Mit picsogsz?",
         "Na, mi van, okoska?",
         "Persze te ezt is jobban tudod, nagyokos.",
-        "Most ne magyarázzál légy szíves!"
+        "Most ne magyarázzál, légy szíves!",
+        "Vársz egy kicsit, jó?",
+        "Mondjad már, mit akarsz!",
+        "Nagyon fárasztasz.",
+        "Nagyon unlak.",
+        "Most inkább nem vesztegetném rád az időmet.",
+        "Ne lájkolgassad, hogy milyen események iránt érdeklődöm, jó?",
+        "Ne olvasd el, persze, ignoráld csak.",
+        "Mit értesz te ezekhez?",
+        "Ennyi volt? Nincs több mondanivalód?",
+        "Megint kezdesz variálni?",
+        "Aludnék most már.",
+        "Abbahagyhatod a süket dumát.",
+        "Neked már nem próbálok meg magyarázni semmit.",
+        "Gondolkozz el ezen - tudom, hogy nehéz.",
+        "Tudom, milyen csökött az agykapacitásod",
+        "Ezt még hányszor mondod el?",
+        "Művelődjél, mert nagyon alacsony színvonalon kommunikálsz."
     ];
 
     var uniqueRandoms = [];
@@ -100,14 +161,23 @@ $(document).ready(main);
 <div class="fluid-container">
 
     <div class="row">
-        <div class="col-lg-1 col-md-6 col-sm-6 col-cs-12">
-            <button class="btn" id="generatorbutton">Ide a kedvességet!</button>
+        <div class="col-lg-12 col-md-12 col-sm-12 col-cs-12">
+            <button class="btn" id="generatorbutton">Ide a kedvességet!<br/><i class="fa fa-magic" aria-hidden="true"></i></button>
         </div>
     </div>
-    <div class="row">
-        <div class="col-lg-1 col-md-6 col-sm-6 col-cs-12">
+    <div class="row" id="messagerow">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-cs-12">
             <h2 id="message"></h2>
         </div>
+    </div>
+</div>
+<div class="footer">
+    <div class="row" id="footerrow">
+
+        <div class="col-lg-12 col-md-12 col-sm-12 col-cs-12">
+            <h6>Boldog szülinapot, Rityu!</h6>
+        </div>
+
     </div>
 
 </div>
