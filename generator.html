@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<title>Kedvességgenerátor</title>
+
+<meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<!-- Font -->
+<link href="https://fonts.googleapis.com/css?family=Karla" rel="stylesheet">
+
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+
+<style>
+    .btn {
+        width: 200px;
+        height: 80px;
+        font-size: 20px;
+        text-align: center;
+    }
+
+</style>
+
+
+</head>
+
+<body>
+
+<script>
+
+var main = function() {
+    
+
+
+    var sentences = [
+        "Szedd már össze magad!", 
+        "Eszed legyen!", 
+        "Jaj, istenem...",
+        "Már megint te?",
+        "Mit akarsz már megint?",
+        "Te sztroncó!"
+    ];
+
+    var uniqueRandoms = [];
+    var numRandoms = sentences.length;
+
+    function refillUniqueRandoms() {
+        uniqueRandoms.length = 0;
+
+        for (var i = 0; i < numRandoms; i++) {
+            uniqueRandoms.push(i);
+        }
+    }
+
+    function makeUniqueRandom() {
+
+        var index = Math.floor(Math.random() * uniqueRandoms.length);
+        var val = uniqueRandoms[index];
+
+        uniqueRandoms.splice(index, 1);
+
+        return val;
+    }
+
+    refillUniqueRandoms();
+
+    $("#generatorbutton").click(function() {
+
+        if (uniqueRandoms.length < 1) {
+            refillUniqueRandoms();
+        }
+        var sentenceIndex = makeUniqueRandom();
+        console.log(sentenceIndex);
+        var generatedSentence = sentences[sentenceIndex];
+        console.log(generatedSentence);
+        $("#message").text(generatedSentence);
+    })
+}
+
+$(document).ready(main);
+
+ 
+
+
+</script>
+<div class="fluid-container">
+
+    <div class="row">
+        <div class="col-lg-1 col-md-6 col-sm-6 col-cs-12">
+            <button class="btn" id="generatorbutton">Ide a kedvességet!</button>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-1 col-md-6 col-sm-6 col-cs-12">
+            <h2 id="message"></h2>
+        </div>
+    </div>
+
+</div>
+
+
+<!-- jQuery UI -->
+<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+<!-- Icons -->
+<script src="https://use.fontawesome.com/6caa75153d.js"></script>
+
+
+
+</body>
+</html>
